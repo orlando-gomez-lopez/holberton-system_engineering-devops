@@ -1,0 +1,19 @@
+#!/usr/bin/env bash                                                                                 
+# creating subdomains and displays them                                                             
+                                                                                            
+                                                                                                    
+my_f () {                                                                                        
+   rt=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk 'FNR==2 {print $4}')                           
+   ds=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk 'FNR==2 {print $5}')                           
+   echo "The subdomain $2 is a $rt record and points to $ds"                                        
+}                                                                                                   
+                                                                                                    
+if [ $# -eq 2 ]
+then
+   my_f "$1" "$2"
+else
+   my_f "$1" "www"
+   my_f "$1" "lb-01"
+   my_f "$1" "web-01"               
+   my_f "$1" "web-02"
+fi

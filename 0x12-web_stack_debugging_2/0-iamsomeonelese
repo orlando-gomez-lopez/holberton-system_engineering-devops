@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# check user and change
+sudo -u "$1" whoami

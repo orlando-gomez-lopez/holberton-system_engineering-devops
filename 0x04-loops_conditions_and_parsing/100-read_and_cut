@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this program read line by line a file and select items
+FILE=$HOME/../../etc/passwd
+while IFS= read -r line
+do
+    echo "$line" | cut -d ":" -f 1,3,6  
+done <"$FILE" 

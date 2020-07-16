@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script displaying infinite echoes and sleep 2
+counter=1
+while [ "$counter" -eq 1 ]
+do
+    echo "To infinity and beyond"
+    sleep 2
+    trap "echo 'I am invincible!!!'" 15
+done	 

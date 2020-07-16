@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# acces port 80
+apt-get -y purge nginx*
+apt-get -y autoremove
+sudo apt-get -y install nginx
+sudo service nginx restart

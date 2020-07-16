@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script print the current directory files after "-"
+DIR="$(ls -1)"
+for file in $DIR
+do
+    echo "${file}" | cut -d "-" -f 2
+done    
